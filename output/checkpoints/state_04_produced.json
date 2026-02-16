@@ -1,0 +1,151 @@
+{
+  "script": "\nEXT. DESERT HIGHWAY - DAY\n\nA lonely wind blows across the asphalt.\n\nINT. DINER - NIGHT\n\nJOHN sits across from SARAH. The tension is palpable.\n\nJOHN\nYou took the money, didn't you?\n\nSARAH\nI had no choice. They were going to kill him. You don't understand \nwhat it's like to have a gun to your head. I ran. I ran as fast as \nI could but they were everywhere.\n\nEXT. ALLEYWAY - NIGHT\n\nJohn pulls a GUN. He CHASEs the shadow down the wet pavement. \nA SCREAM echoes.\n",
+  "narrative_states": [
+    {
+      "scene_id": "SCENE-001",
+      "timeline_position": 0.3333333333333333,
+      "tension_level": 0.1,
+      "active_characters": [],
+      "emotional_vector": null
+    },
+    {
+      "scene_id": "SCENE-002",
+      "timeline_position": 0.6666666666666666,
+      "tension_level": 0.1,
+      "active_characters": [
+        "JOHN",
+        "SARAH",
+        "SARAH\nI"
+      ],
+      "emotional_vector": null
+    },
+    {
+      "scene_id": "SCENE-003",
+      "timeline_position": 1.0,
+      "tension_level": 0.9,
+      "active_characters": [
+        "GUN",
+        "A SCREAM"
+      ],
+      "emotional_vector": null
+    }
+  ],
+  "scenes": [
+    [
+      "EXT. DESERT HIGHWAY - DAY",
+      "\nA lonely wind blows across the asphalt.\n"
+    ],
+    [
+      "INT. DINER - NIGHT",
+      "\nJOHN sits across from SARAH. The tension is palpable.\n\nJOHN\nYou took the money, didn't you?\n\nSARAH\nI had no choice. They were going to kill him. You don't understand \nwhat it's like to have a gun to your head. I ran. I ran as fast as \nI could but they were everywhere.\n"
+    ],
+    [
+      "EXT. ALLEYWAY - NIGHT",
+      "\nJohn pulls a GUN. He CHASEs the shadow down the wet pavement. \nA SCREAM echoes."
+    ]
+  ],
+  "shot_plans": [
+    {
+      "shot_id": "SCENE-001-SHOT-001",
+      "scene_id": "SCENE-001",
+      "shot_type": "Wide",
+      "lens": "24mm",
+      "camera_movement": "Slow Pan",
+      "is_deterministic": true
+    },
+    {
+      "shot_id": "SCENE-002-SHOT-001",
+      "scene_id": "SCENE-002",
+      "shot_type": "Wide",
+      "lens": "35mm",
+      "camera_movement": "Tracking",
+      "is_deterministic": true
+    },
+    {
+      "shot_id": "SCENE-002-SHOT-002",
+      "scene_id": "SCENE-002",
+      "shot_type": "Medium",
+      "lens": "35mm",
+      "camera_movement": "Tracking",
+      "is_deterministic": true
+    },
+    {
+      "shot_id": "SCENE-003-SHOT-001",
+      "scene_id": "SCENE-003",
+      "shot_type": "Wide",
+      "lens": "35mm",
+      "camera_movement": "Tracking",
+      "is_deterministic": true
+    },
+    {
+      "shot_id": "SCENE-003-SHOT-002",
+      "scene_id": "SCENE-003",
+      "shot_type": "Medium",
+      "lens": "35mm",
+      "camera_movement": "Tracking",
+      "is_deterministic": true
+    }
+  ],
+  "prompts": {
+    "SCENE-001-SHOT-001": {
+      "positive_prompt": "desert highway, A lonely wind blows across the asphalt., 24mm wide lens, wide angle, establishing shot, detailed background, slow pan, cinematic movement, natural daylight, harsh shadows, high contrast, shot on Kodak Vision3 500T, film grain, teal and orange color grading, 4k, ultra-realistic",
+      "negative_prompt": "text, watermark, blur, distorted, cartoon, 3d render",
+      "seed": 143108900
+    },
+    "SCENE-002-SHOT-001": {
+      "positive_prompt": "diner, JOHN sits across from SARAH. The tension is palpab, 35mm lens, natural field of view, wide angle, establishing shot, detailed background, tracking shot, smooth camera movement, cinematic night lighting, chiaroscuro, volumetric fog, dark atmosphere, shot on Kodak Vision3 500T, film grain, teal and orange color grading, 4k, ultra-realistic",
+      "negative_prompt": "text, watermark, blur, distorted, cartoon, 3d render",
+      "seed": 1461730410
+    },
+    "SCENE-002-SHOT-002": {
+      "positive_prompt": "diner, JOHN sits across from SARAH. The tension is palpab, 35mm lens, natural field of view, medium shot, balanced composition, tracking shot, smooth camera movement, cinematic night lighting, chiaroscuro, volumetric fog, dark atmosphere, shot on Kodak Vision3 500T, film grain, teal and orange color grading, 4k, ultra-realistic",
+      "negative_prompt": "text, watermark, blur, distorted, cartoon, 3d render",
+      "seed": 918427472
+    },
+    "SCENE-003-SHOT-001": {
+      "positive_prompt": "alleyway, John pulls a GUN. He CHASEs the shadow down the we, 35mm lens, natural field of view, wide angle, establishing shot, detailed background, tracking shot, smooth camera movement, cinematic night lighting, chiaroscuro, volumetric fog, dark atmosphere, shot on Kodak Vision3 500T, film grain, teal and orange color grading, 4k, ultra-realistic",
+      "negative_prompt": "text, watermark, blur, distorted, cartoon, 3d render",
+      "seed": 313274248
+    },
+    "SCENE-003-SHOT-002": {
+      "positive_prompt": "alleyway, John pulls a GUN. He CHASEs the shadow down the we, 35mm lens, natural field of view, medium shot, balanced composition, tracking shot, smooth camera movement, cinematic night lighting, chiaroscuro, volumetric fog, dark atmosphere, shot on Kodak Vision3 500T, film grain, teal and orange color grading, 4k, ultra-realistic",
+      "negative_prompt": "text, watermark, blur, distorted, cartoon, 3d render",
+      "seed": 382618780
+    }
+  },
+  "assets": {
+    "SCENE-001-SHOT-001": {
+      "image_url": "file:///Users/abhimanyudhanwadia/AntiGrav/lfv-re-engine/output/assets/SCENE-001-SHOT-001.png",
+      "video_url": "file:///Users/abhimanyudhanwadia/AntiGrav/lfv-re-engine/output/assets/SCENE-001-SHOT-001.mp4"
+    },
+    "SCENE-002-SHOT-001": {
+      "image_url": "file:///Users/abhimanyudhanwadia/AntiGrav/lfv-re-engine/output/assets/SCENE-002-SHOT-001.png",
+      "video_url": "file:///Users/abhimanyudhanwadia/AntiGrav/lfv-re-engine/output/assets/SCENE-002-SHOT-001.mp4"
+    },
+    "SCENE-002-SHOT-002": {
+      "image_url": "file:///Users/abhimanyudhanwadia/AntiGrav/lfv-re-engine/output/assets/SCENE-002-SHOT-002.png",
+      "video_url": "file:///Users/abhimanyudhanwadia/AntiGrav/lfv-re-engine/output/assets/SCENE-002-SHOT-002.mp4"
+    },
+    "SCENE-003-SHOT-001": {
+      "image_url": "file:///Users/abhimanyudhanwadia/AntiGrav/lfv-re-engine/output/assets/SCENE-003-SHOT-001.png",
+      "video_url": "file:///Users/abhimanyudhanwadia/AntiGrav/lfv-re-engine/output/assets/SCENE-003-SHOT-001.mp4"
+    },
+    "SCENE-003-SHOT-002": {
+      "image_url": "file:///Users/abhimanyudhanwadia/AntiGrav/lfv-re-engine/output/assets/SCENE-003-SHOT-002.png",
+      "video_url": "file:///Users/abhimanyudhanwadia/AntiGrav/lfv-re-engine/output/assets/SCENE-003-SHOT-002.mp4"
+    }
+  },
+  "logs": [
+    "[NODE 1] Parsing screenplay...",
+    "[NODE 1] Applying tension override for SCENE-003",
+    "[NODE 1] \u2713 Extracted 3 scenes",
+    "[NODE 2] Generating shot plans...",
+    "[NODE 2] \u2713 Generated 5 shot plans",
+    "[NODE 3] Generating prompts...",
+    "[NODE 3] \u2713 Generated 5 prompts",
+    "[NODE 4] Production factory - generating assets...",
+    "[NODE 4] \u2713 Generated 5 image/video pairs"
+  ],
+  "retry_count": 0,
+  "rejected_shots": []
+}

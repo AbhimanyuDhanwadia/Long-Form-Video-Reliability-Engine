@@ -1,0 +1,100 @@
+{
+  "script": "\nEXT. DESERT HIGHWAY - DAY\n\nA lonely wind blows across the asphalt.\n\nINT. DINER - NIGHT\n\nJOHN sits across from SARAH. The tension is palpable.\n\nJOHN\nYou took the money, didn't you?\n\nSARAH\nI had no choice. They were going to kill him. You don't understand \nwhat it's like to have a gun to your head. I ran. I ran as fast as \nI could but they were everywhere.\n\nEXT. ALLEYWAY - NIGHT\n\nJohn pulls a GUN. He CHASEs the shadow down the wet pavement. \nA SCREAM echoes.\n",
+  "narrative_states": [
+    {
+      "scene_id": "SCENE-001",
+      "timeline_position": 0.3333333333333333,
+      "tension_level": 0.1,
+      "active_characters": [],
+      "emotional_vector": null
+    },
+    {
+      "scene_id": "SCENE-002",
+      "timeline_position": 0.6666666666666666,
+      "tension_level": 0.1,
+      "active_characters": [
+        "JOHN",
+        "SARAH",
+        "SARAH\nI"
+      ],
+      "emotional_vector": null
+    },
+    {
+      "scene_id": "SCENE-003",
+      "timeline_position": 1.0,
+      "tension_level": 0.9,
+      "active_characters": [
+        "GUN",
+        "A SCREAM"
+      ],
+      "emotional_vector": null
+    }
+  ],
+  "scenes": [
+    [
+      "EXT. DESERT HIGHWAY - DAY",
+      "\nA lonely wind blows across the asphalt.\n"
+    ],
+    [
+      "INT. DINER - NIGHT",
+      "\nJOHN sits across from SARAH. The tension is palpable.\n\nJOHN\nYou took the money, didn't you?\n\nSARAH\nI had no choice. They were going to kill him. You don't understand \nwhat it's like to have a gun to your head. I ran. I ran as fast as \nI could but they were everywhere.\n"
+    ],
+    [
+      "EXT. ALLEYWAY - NIGHT",
+      "\nJohn pulls a GUN. He CHASEs the shadow down the wet pavement. \nA SCREAM echoes."
+    ]
+  ],
+  "shot_plans": [
+    {
+      "shot_id": "SCENE-001-SHOT-001",
+      "scene_id": "SCENE-001",
+      "shot_type": "Wide",
+      "lens": "24mm",
+      "camera_movement": "Slow Pan",
+      "is_deterministic": true
+    },
+    {
+      "shot_id": "SCENE-002-SHOT-001",
+      "scene_id": "SCENE-002",
+      "shot_type": "Wide",
+      "lens": "35mm",
+      "camera_movement": "Tracking",
+      "is_deterministic": true
+    },
+    {
+      "shot_id": "SCENE-002-SHOT-002",
+      "scene_id": "SCENE-002",
+      "shot_type": "Medium",
+      "lens": "35mm",
+      "camera_movement": "Tracking",
+      "is_deterministic": true
+    },
+    {
+      "shot_id": "SCENE-003-SHOT-001",
+      "scene_id": "SCENE-003",
+      "shot_type": "Wide",
+      "lens": "35mm",
+      "camera_movement": "Tracking",
+      "is_deterministic": true
+    },
+    {
+      "shot_id": "SCENE-003-SHOT-002",
+      "scene_id": "SCENE-003",
+      "shot_type": "Medium",
+      "lens": "35mm",
+      "camera_movement": "Tracking",
+      "is_deterministic": true
+    }
+  ],
+  "prompts": {},
+  "assets": {},
+  "logs": [
+    "[NODE 1] Parsing screenplay...",
+    "[NODE 1] Applying tension override for SCENE-003",
+    "[NODE 1] \u2713 Extracted 3 scenes",
+    "[NODE 2] Generating shot plans...",
+    "[NODE 2] \u2713 Generated 5 shot plans"
+  ],
+  "retry_count": 0,
+  "rejected_shots": []
+}
