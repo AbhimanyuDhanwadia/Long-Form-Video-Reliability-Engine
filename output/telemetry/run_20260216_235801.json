@@ -1,0 +1,722 @@
+{
+  "summary": {
+    "run_id": "run_20260216_235801",
+    "timestamp": "2026-02-16T23:58:43.699618",
+    "duration_seconds": 42.39,
+    "total_events": 50,
+    "total_retries": 0,
+    "avg_generation_latency_ms": 770.1,
+    "success_rate_percent": 100.0,
+    "critic_stats": {
+      "total_evaluations": 20,
+      "pass_count": 0,
+      "fail_count": 0
+    }
+  },
+  "events": [
+    {
+      "timestamp": "2026-02-16T23:58:09.672306",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-001",
+      "shot_id": "SCENE-001-SHOT-001",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 562.2467994689941,
+      "metadata": {
+        "seed": 110148813
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:10.679489",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-001",
+      "shot_id": "SCENE-001-SHOT-001",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1007.094144821167,
+      "metadata": {
+        "shot_type": "Wide",
+        "lens": "24mm",
+        "movement": "Slow Pan"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:11.203508",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-001",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 523.9260196685791,
+      "metadata": {
+        "seed": 1002871048
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:12.212000",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-001",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1008.3861351013184,
+      "metadata": {
+        "shot_type": "Wide",
+        "lens": "35mm",
+        "movement": "Tracking"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:12.745305",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-002",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 533.2086086273193,
+      "metadata": {
+        "seed": 1591720848
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:13.751484",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-002",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1006.0679912567139,
+      "metadata": {
+        "shot_type": "Medium",
+        "lens": "35mm",
+        "movement": "Tracking"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:14.280554",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-003",
+      "shot_id": "SCENE-003-SHOT-001",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 528.9537906646729,
+      "metadata": {
+        "seed": 521625608
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:15.288304",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-003",
+      "shot_id": "SCENE-003-SHOT-001",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1007.5910091400146,
+      "metadata": {
+        "shot_type": "Wide",
+        "lens": "35mm",
+        "movement": "Tracking"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:15.821720",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-003",
+      "shot_id": "SCENE-003-SHOT-002",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 533.2679748535156,
+      "metadata": {
+        "seed": 236471508
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:16.828870",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-003",
+      "shot_id": "SCENE-003-SHOT-002",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1007.0569515228271,
+      "metadata": {
+        "shot_type": "Medium",
+        "lens": "35mm",
+        "movement": "Tracking"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:17.811934",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-001",
+      "shot_id": "SCENE-001-SHOT-001",
+      "step": "CRITIC_QA",
+      "status": "FAIL",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.50",
+        "reason": "visual_hallucination",
+        "method": "vlm_semantic_match",
+        "retry_count": 0,
+        "final_score": "0.50"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:18.392961",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-001",
+      "step": "CRITIC_QA",
+      "status": "FAIL",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.07",
+        "reason": "visual_hallucination",
+        "method": "vlm_semantic_match",
+        "retry_count": 0,
+        "final_score": "0.07"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:18.928881",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-002",
+      "step": "CRITIC_QA",
+      "status": "FAIL",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.07",
+        "reason": "visual_hallucination",
+        "method": "vlm_semantic_match",
+        "retry_count": 0,
+        "final_score": "0.07"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:19.498639",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-003",
+      "shot_id": "SCENE-003-SHOT-001",
+      "step": "CRITIC_QA",
+      "status": "PASS",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.58",
+        "method": "vlm_semantic_match",
+        "retry_count": 0,
+        "final_score": "0.58"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:20.030624",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-003",
+      "shot_id": "SCENE-003-SHOT-002",
+      "step": "CRITIC_QA",
+      "status": "PASS",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.58",
+        "method": "vlm_semantic_match",
+        "retry_count": 0,
+        "final_score": "0.58"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:20.567542",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-001",
+      "shot_id": "SCENE-001-SHOT-001",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 534.0650081634521,
+      "metadata": {
+        "seed": 110148813
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:21.573200",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-001",
+      "shot_id": "SCENE-001-SHOT-001",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1005.5289268493652,
+      "metadata": {
+        "shot_type": "Wide",
+        "lens": "24mm",
+        "movement": "Slow Pan"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:22.103858",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-001",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 530.5299758911133,
+      "metadata": {
+        "seed": 1002871048
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:23.112042",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-001",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1008.0740451812744,
+      "metadata": {
+        "shot_type": "Wide",
+        "lens": "35mm",
+        "movement": "Tracking"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:23.642203",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-002",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 530.0400257110596,
+      "metadata": {
+        "seed": 1591720848
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:24.648775",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-002",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1006.4170360565186,
+      "metadata": {
+        "shot_type": "Medium",
+        "lens": "35mm",
+        "movement": "Tracking"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:25.248986",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-001",
+      "shot_id": "SCENE-001-SHOT-001",
+      "step": "CRITIC_QA",
+      "status": "FAIL",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.50",
+        "reason": "visual_hallucination",
+        "method": "vlm_semantic_match",
+        "retry_count": 1,
+        "final_score": "0.50"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:25.782735",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-001",
+      "step": "CRITIC_QA",
+      "status": "FAIL",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.07",
+        "reason": "visual_hallucination",
+        "method": "vlm_semantic_match",
+        "retry_count": 1,
+        "final_score": "0.07"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:26.318422",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-002",
+      "step": "CRITIC_QA",
+      "status": "FAIL",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.40",
+        "reason": "visual_hallucination",
+        "method": "vlm_semantic_match",
+        "retry_count": 1,
+        "final_score": "0.40"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:26.842008",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-003",
+      "shot_id": "SCENE-003-SHOT-001",
+      "step": "CRITIC_QA",
+      "status": "PASS",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.58",
+        "method": "vlm_semantic_match",
+        "retry_count": 1,
+        "final_score": "0.58"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:27.370417",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-003",
+      "shot_id": "SCENE-003-SHOT-002",
+      "step": "CRITIC_QA",
+      "status": "PASS",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.58",
+        "method": "vlm_semantic_match",
+        "retry_count": 1,
+        "final_score": "0.58"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:27.904757",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-001",
+      "shot_id": "SCENE-001-SHOT-001",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 532.8800678253174,
+      "metadata": {
+        "seed": 110148813
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:28.914132",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-001",
+      "shot_id": "SCENE-001-SHOT-001",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1009.2253684997559,
+      "metadata": {
+        "shot_type": "Wide",
+        "lens": "24mm",
+        "movement": "Slow Pan"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:29.443490",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-001",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 529.1168689727783,
+      "metadata": {
+        "seed": 1002871048
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:30.450025",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-001",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1006.4105987548828,
+      "metadata": {
+        "shot_type": "Wide",
+        "lens": "35mm",
+        "movement": "Tracking"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:30.980738",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-002",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 530.5709838867188,
+      "metadata": {
+        "seed": 1591720848
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:31.986846",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-002",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1005.9549808502197,
+      "metadata": {
+        "shot_type": "Medium",
+        "lens": "35mm",
+        "movement": "Tracking"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:32.592622",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-001",
+      "shot_id": "SCENE-001-SHOT-001",
+      "step": "CRITIC_QA",
+      "status": "FAIL",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.50",
+        "reason": "visual_hallucination",
+        "method": "vlm_semantic_match",
+        "retry_count": 2,
+        "final_score": "0.50"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:33.130989",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-001",
+      "step": "CRITIC_QA",
+      "status": "FAIL",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.40",
+        "reason": "visual_hallucination",
+        "method": "vlm_semantic_match",
+        "retry_count": 2,
+        "final_score": "0.40"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:33.665931",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-002",
+      "step": "CRITIC_QA",
+      "status": "FAIL",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.40",
+        "reason": "visual_hallucination",
+        "method": "vlm_semantic_match",
+        "retry_count": 2,
+        "final_score": "0.40"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:34.195468",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-003",
+      "shot_id": "SCENE-003-SHOT-001",
+      "step": "CRITIC_QA",
+      "status": "PASS",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.58",
+        "method": "vlm_semantic_match",
+        "retry_count": 2,
+        "final_score": "0.58"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:34.809024",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-003",
+      "shot_id": "SCENE-003-SHOT-002",
+      "step": "CRITIC_QA",
+      "status": "FAIL",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.12",
+        "reason": "visual_hallucination",
+        "method": "vlm_semantic_match",
+        "retry_count": 2,
+        "final_score": "0.12"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:35.343549",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-001",
+      "shot_id": "SCENE-001-SHOT-001",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 533.7159633636475,
+      "metadata": {
+        "seed": 110148813
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:36.350298",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-001",
+      "shot_id": "SCENE-001-SHOT-001",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1006.6187381744385,
+      "metadata": {
+        "shot_type": "Wide",
+        "lens": "24mm",
+        "movement": "Slow Pan"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:36.888756",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-001",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 538.3081436157227,
+      "metadata": {
+        "seed": 1002871048
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:37.895831",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-001",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1006.7477226257324,
+      "metadata": {
+        "shot_type": "Wide",
+        "lens": "35mm",
+        "movement": "Tracking"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:38.428908",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-002",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 532.9692363739014,
+      "metadata": {
+        "seed": 1591720848
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:39.435516",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-002",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1006.4892768859863,
+      "metadata": {
+        "shot_type": "Medium",
+        "lens": "35mm",
+        "movement": "Tracking"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:39.960474",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-003",
+      "shot_id": "SCENE-003-SHOT-002",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 524.8019695281982,
+      "metadata": {
+        "seed": 236471508
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:40.967342",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-003",
+      "shot_id": "SCENE-003-SHOT-002",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1006.7288875579834,
+      "metadata": {
+        "shot_type": "Medium",
+        "lens": "35mm",
+        "movement": "Tracking"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:41.571885",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-001",
+      "shot_id": "SCENE-001-SHOT-001",
+      "step": "CRITIC_QA",
+      "status": "FAIL",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.50",
+        "reason": "visual_hallucination",
+        "method": "vlm_semantic_match",
+        "retry_count": 3,
+        "final_score": "0.50"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:42.106385",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-001",
+      "step": "CRITIC_QA",
+      "status": "FAIL",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.40",
+        "reason": "visual_hallucination",
+        "method": "vlm_semantic_match",
+        "retry_count": 3,
+        "final_score": "0.40"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:42.635250",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-002",
+      "step": "CRITIC_QA",
+      "status": "FAIL",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.40",
+        "reason": "visual_hallucination",
+        "method": "vlm_semantic_match",
+        "retry_count": 3,
+        "final_score": "0.40"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:43.166243",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-003",
+      "shot_id": "SCENE-003-SHOT-001",
+      "step": "CRITIC_QA",
+      "status": "FAIL",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.12",
+        "reason": "visual_hallucination",
+        "method": "vlm_semantic_match",
+        "retry_count": 3,
+        "final_score": "0.12"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:58:43.695086",
+      "event_type": "CRITIC",
+      "scene_id": "SCENE-003",
+      "shot_id": "SCENE-003-SHOT-002",
+      "step": "CRITIC_QA",
+      "status": "PASS",
+      "latency_ms": 0,
+      "metadata": {
+        "score": "0.58",
+        "method": "vlm_semantic_match",
+        "retry_count": 3,
+        "final_score": "0.58"
+      }
+    }
+  ]
+}

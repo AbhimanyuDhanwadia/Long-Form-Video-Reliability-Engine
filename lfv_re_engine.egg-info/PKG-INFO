@@ -1,3 +1,24 @@
+Metadata-Version: 2.4
+Name: lfv-re-engine
+Version: 0.1.0
+Summary: Long-Form Video Reliability Engine: A deterministic orchestration pipeline for generative video.
+Author: Abhimanyu Dhanwadia
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: langgraph>=1.0.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: sentence-transformers>=3.0.0
+Requires-Dist: scikit-learn>=1.0.0
+Requires-Dist: pillow>=10.0.0
+Requires-Dist: requests>=2.0.0
+Requires-Dist: tenacity>=8.0.0
+Requires-Dist: typer>=0.9.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0.0; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: isort; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+
 # 🎬 LFV-RE: Long-Form Video Reliability Engine
 
 > **A deterministic, self-healing orchestration pipeline for long-form generative video.**
@@ -61,10 +82,9 @@ Identical script inputs produce bit-exact `ShotPlan` objects. This property is v
 ```text
 lfv-re-engine/
 ├── output/
-│   │   ├── assets/             # Generated Artifacts (PNG/MP4)
-│   │   ├── checkpoints/        # State snapshots (JSON)
-│   │   └── telemetry/          # Structured performance logs (JSON)
-│   └── src/
+│   ├── assets/             # Generated Artifacts (PNG/MP4)
+│   ├── checkpoints/        # State snapshots (JSON)
+│   └── telemetry.csv       # Observability logs
 ├── src/
 │   ├── core/
 │   │   ├── config.py       # Environment & API Settings
@@ -94,23 +114,16 @@ lfv-re-engine/
 # Clone repository
 git clone https://github.com/your-username/lfv-re-engine.git
 cd lfv-re-engine
-```
 
-### 2. Install Dependencies
-
-```bash
 # Create virtual environment
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
-
-# Install package in editable mode (for testing)
-pip install -e .
 ```
 
-### 3. Configuration (`.env`)
+### 2. Configuration (`.env`)
 
 By default, the system runs in **Mock Mode** (Free, Local, Fast). To enable real generation, copy `.env.example` to `.env`:
 
@@ -124,24 +137,23 @@ Edit `.env`:
 # Core Settings
 USE_MOCK=true  # Set to 'false' to enable Real APIs
 MAX_RETRIES=3
-SIMILARITY_THRESHOLD=0.3  # Cosine similarity threshold for visual/semantic alignment
+CRITIC_PASS_RATE=0.3  # Cosine similarity threshold
 
-# API Keys (Required for VLM and Real Gen)
-OPENAI_API_KEY=your_key_here
+# API Keys (Required if USE_MOCK=false)
 FLUX_API_KEY=your_key_here
 RUNWAY_API_KEY=your_key_here
 ```
 
-### 4. Running Tests
+### 3. Run Tests
 
 To verify system integrity and determinism:
 
 ```bash
 # Run test suite
-pytest
+pytest tests/
 ```
 
-### 5. Run the Engine
+### 4. Run the Engine
 
 ```bash
 python3 main.py
@@ -174,12 +186,7 @@ Instead of random QA, we use **BERT Embeddings** (`all-MiniLM-L6-v2`) to mathema
 
 ### 3. Observability & Telemetry
 
-The engine writes structured JSON logs to `output/telemetry/run_{timestamp}.json` tracking:
-
-*   **Latency**: Time per generation step.
-*   **Semantic Scores**: Cosine similarity between Script and VLM Caption.
-*   **Failure Reasons**: "Visual Hallucination" or "Semantic Drift".
-*   **Retries**: Count of regeneration attempts per shot.
+The engine writes a structured `telemetry.csv` log tracking the latency, status, and semantic scores of every generation event, enabling quantitative reliability analysis.
 
 ### 4. State Persistence
 

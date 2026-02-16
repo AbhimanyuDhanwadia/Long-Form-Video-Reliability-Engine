@@ -136,6 +136,7 @@ class ImageService:
         # Log telemetry event
         scene_id = shot_id.split("-SHOT")[0]
         telemetry.log_event(
+            event_type="GENERATION",
             scene_id=scene_id,
             shot_id=shot_id,
             step="IMAGE_GEN",

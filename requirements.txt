@@ -1,7 +1,7 @@
-langgraph
-pydantic>=2.0
-requests
-pillow
-python-dotenv
-sentence-transformers
-scikit-learn
+langgraph==1.0.8
+sentence-transformers==5.2.2
+pydantic==2.12.5
+sentencepiece==0.2.1
+scikit-learn==1.8.0
+pillow==12.1.1
+pytest==9.0.2

@@ -312,6 +312,7 @@ def node_critic(state: AgentState) -> AgentState:
             
             # Log telemetry for pass
             telemetry.log_event(
+                event_type="CRITIC",
                 scene_id=scene_id,
                 shot_id=shot_id,
                 step="CRITIC_QA",
@@ -330,6 +331,7 @@ def node_critic(state: AgentState) -> AgentState:
             
             # Log telemetry for fail
             telemetry.log_event(
+                event_type="CRITIC",
                 scene_id=scene_id,
                 shot_id=shot_id,
                 step="CRITIC_QA",

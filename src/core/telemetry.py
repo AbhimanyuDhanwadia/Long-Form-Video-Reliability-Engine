@@ -1,72 +1,139 @@
 """
-Telemetry and Observability for the Long-Form Video Reliability Engine.
+Telemetry Service for the Long-Form Video Reliability Engine.
 
-This module provides event logging and performance tracking across
-the entire pipeline.
+This module handles structured logging of pipeline events, performance metrics,
+and reliability statistics to JSON files for post-run analysis.
 """
 
 import os
 import json
+import time
 from datetime import datetime
+from typing import Dict, Any, List, Optional
+from threading import Lock
 
 
 class TelemetryService:
     """
-    Centralized telemetry service for tracking pipeline events.
+    Handles structured logging of pipeline events and metrics.
     
-    Logs all events to a CSV file for analysis and debugging.
+    Buffers events in memory and writes a comprehensive JSON report
+    at the end of the run, including summary statistics.
     """
     
-    def __init__(self):
-        """Initialize the telemetry service."""
-        self.log_file = "output/telemetry.csv"
-        self._initialize_log_file()
-    
-    def _initialize_log_file(self):
-        """Create the log file with headers if it doesn't exist."""
-        # Create output directory if it doesn't exist
-        os.makedirs(os.path.dirname(self.log_file), exist_ok=True)
-        
-        # Create file with headers if it doesn't exist
-        if not os.path.exists(self.log_file):
-            with open(self.log_file, 'w') as f:
-                f.write("timestamp,scene_id,shot_id,step,status,latency_ms,metadata\n")
-    
-    def log_event(
-        self,
-        scene_id: str,
-        shot_id: str,
-        step: str,
-        status: str,
-        latency_ms: float = 0,
-        metadata: dict = None
-    ):
+    def __init__(self, output_dir: str = "output/telemetry"):
         """
-        Log a telemetry event.
+        Initialize the TelemetryService.
         
         Args:
-            scene_id: Scene identifier (e.g., "SCENE-001")
-            shot_id: Shot identifier (e.g., "SCENE-001-SHOT-001")
-            step: Pipeline step name (e.g., "IMAGE_GEN", "VIDEO_GEN", "CRITIC_QA")
-            status: Event status (e.g., "SUCCESS", "FAIL", "PASS")
-            latency_ms: Operation latency in milliseconds
-            metadata: Additional metadata as a dictionary
+            output_dir: Directory to store telemetry logs
         """
-        # Get current timestamp in ISO format
-        timestamp = datetime.now().isoformat()
+        self.output_dir = output_dir
+        os.makedirs(self.output_dir, exist_ok=True)
         
-        # Format metadata as JSON string (empty dict if None)
-        metadata_str = json.dumps(metadata if metadata is not None else {})
+        # Generate unique run ID
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.run_id = f"run_{timestamp}"
+        self.log_file = os.path.join(self.output_dir, f"{self.run_id}.json")
         
-        # Escape any commas or quotes in metadata
-        metadata_str = metadata_str.replace('"', '""')
+        # Internal buffer
+        self.events: List[Dict[str, Any]] = []
+        self.start_time = time.time()
+        self._lock = Lock()
         
-        # Format the CSV row
-        row = f'{timestamp},{scene_id},{shot_id},{step},{status},{latency_ms:.2f},"{metadata_str}"\n'
+        print(f"[TELEMETRY] Initialized (Run ID: {self.run_id})")
         
-        # Append to log file
-        with open(self.log_file, 'a') as f:
-            f.write(row)
+    def log_event(
+        self,
+        event_type: str,
+        scene_id: str = "GLOBAL",
+        shot_id: str = "GLOBAL",
+        step: str = "UNKNOWN",
+        status: str = "INFO",
+        latency_ms: float = 0.0,
+        metadata: Optional[Dict[str, Any]] = None
+    ):
+        """
+        Log a structured event to the telemetry buffer.
+        
+        Args:
+            event_type: Category of event (e.g., "GENERATION", "CRITIC", "SYSTEM")
+            scene_id: Associated scene identifier
+            shot_id: Associated shot identifier
+            step: Pipeline step name
+            status: Outcome status (SUCCESS, FAILURE, RETRY, INFO)
+            latency_ms: Duration of the operation in milliseconds
+            metadata: Additional context dictionary
+        """
+        event = {
+            "timestamp": datetime.now().isoformat(),
+            "event_type": event_type,
+            "scene_id": scene_id,
+            "shot_id": shot_id,
+            "step": step,
+            "status": status,
+            "latency_ms": latency_ms,
+            "metadata": metadata or {}
+        }
+        
+        with self._lock:
+            self.events.append(event)
+            
+            # Print significant events to console
+            if status in ["FAILURE", "RETRY"] or event_type == "CRITIC":
+                print(f"[TELEMETRY] {status}: {step} - {metadata.get('reason', '')}")
+    
+    def save_run(self):
+        """
+        Calculate summary statistics and write the full run log to JSON.
+        """
+        with self._lock:
+            end_time = time.time()
+            total_duration = end_time - self.start_time
+            
+            # Calculate metrics
+            total_events = len(self.events)
+            generation_events = [e for e in self.events if e["event_type"] == "GENERATION"]
+            critic_events = [e for e in self.events if e["event_type"] == "CRITIC"]
+            retry_events = [e for e in self.events if e["status"] == "RETRY"]
+            failure_events = [e for e in self.events if e["status"] == "FAILURE"]
+            
+            # Latency stats
+            latencies = [e["latency_ms"] for e in generation_events if e["latency_ms"] > 0]
+            avg_latency = sum(latencies) / len(latencies) if latencies else 0
+            
+            # Success rate calculation
+            attempts = len(generation_events)
+            failures = len(failure_events)
+            success_rate = ((attempts - failures) / attempts * 100) if attempts > 0 else 100.0
+            
+            summary = {
+                "run_id": self.run_id,
+                "timestamp": datetime.now().isoformat(),
+                "duration_seconds": round(total_duration, 2),
+                "total_events": total_events,
+                "total_retries": len(retry_events),
+                "avg_generation_latency_ms": round(avg_latency, 2),
+                "success_rate_percent": round(success_rate, 2),
+                "critic_stats": {
+                    "total_evaluations": len(critic_events),
+                    "pass_count": len([e for e in critic_events if e["status"] == "SUCCESS"]),
+                    "fail_count": len([e for e in critic_events if e["status"] == "FAILURE"])
+                }
+            }
+            
+            output_data = {
+                "summary": summary,
+                "events": self.events
+            }
+            
+            try:
+                with open(self.log_file, 'w') as f:
+                    json.dump(output_data, f, indent=2)
+                print(f"\n[TELEMETRY] ✓ Run logs saved to {self.log_file}")
+                print(f"[TELEMETRY] Stats: {len(retry_events)} retries, {success_rate:.1f}% success rate")
+            except Exception as e:
+                print(f"[TELEMETRY] Error saving logs: {e}")
 
 
 # Global telemetry instance

@@ -1,0 +1,70 @@
+{
+  "summary": {
+    "run_id": "run_20260216_235508",
+    "timestamp": "2026-02-16T23:55:19.577877",
+    "duration_seconds": 11.21,
+    "total_events": 4,
+    "total_retries": 0,
+    "avg_generation_latency_ms": 772.28,
+    "success_rate_percent": 100.0,
+    "critic_stats": {
+      "total_evaluations": 0,
+      "pass_count": 0,
+      "fail_count": 0
+    }
+  },
+  "events": [
+    {
+      "timestamp": "2026-02-16T23:55:16.855858",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-001",
+      "shot_id": "SCENE-001-SHOT-001",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 543.6990261077881,
+      "metadata": {
+        "seed": 325492750
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:55:17.862865",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-001",
+      "shot_id": "SCENE-001-SHOT-001",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1006.8869590759277,
+      "metadata": {
+        "shot_type": "Wide",
+        "lens": "24mm",
+        "movement": "Slow Pan"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:55:18.395249",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-001",
+      "step": "IMAGE_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 532.1407318115234,
+      "metadata": {
+        "seed": 632175454
+      }
+    },
+    {
+      "timestamp": "2026-02-16T23:55:19.401780",
+      "event_type": "GENERATION",
+      "scene_id": "SCENE-002",
+      "shot_id": "SCENE-002-SHOT-001",
+      "step": "VIDEO_GEN",
+      "status": "SUCCESS",
+      "latency_ms": 1006.3858032226562,
+      "metadata": {
+        "shot_type": "Wide",
+        "lens": "35mm",
+        "movement": "Tracking"
+      }
+    }
+  ]
+}

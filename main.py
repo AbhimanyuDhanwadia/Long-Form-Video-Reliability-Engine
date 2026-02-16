@@ -128,4 +128,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    finally:
+        # ensuring telemetry is saved even if errors occur
+        from src.core.telemetry import telemetry
+        telemetry.save_run()

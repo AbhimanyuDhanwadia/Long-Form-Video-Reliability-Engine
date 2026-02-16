@@ -90,27 +90,27 @@
     "SCENE-001-SHOT-001": {
       "positive_prompt": "desert highway, A lonely wind blows across the asphalt., 24mm wide lens, wide angle, establishing shot, detailed background, slow pan, cinematic movement, natural daylight, harsh shadows, high contrast, shot on Kodak Vision3 500T, film grain, teal and orange color grading, 4k, ultra-realistic",
       "negative_prompt": "text, watermark, blur, distorted, cartoon, 3d render",
-      "seed": 143108900
+      "seed": 110148813
     },
     "SCENE-002-SHOT-001": {
       "positive_prompt": "diner, JOHN sits across from SARAH. The tension is palpab, 35mm lens, natural field of view, wide angle, establishing shot, detailed background, tracking shot, smooth camera movement, cinematic night lighting, chiaroscuro, volumetric fog, dark atmosphere, shot on Kodak Vision3 500T, film grain, teal and orange color grading, 4k, ultra-realistic",
       "negative_prompt": "text, watermark, blur, distorted, cartoon, 3d render",
-      "seed": 1461730410
+      "seed": 1002871048
     },
     "SCENE-002-SHOT-002": {
       "positive_prompt": "diner, JOHN sits across from SARAH. The tension is palpab, 35mm lens, natural field of view, medium shot, balanced composition, tracking shot, smooth camera movement, cinematic night lighting, chiaroscuro, volumetric fog, dark atmosphere, shot on Kodak Vision3 500T, film grain, teal and orange color grading, 4k, ultra-realistic",
       "negative_prompt": "text, watermark, blur, distorted, cartoon, 3d render",
-      "seed": 918427472
+      "seed": 1591720848
     },
     "SCENE-003-SHOT-001": {
       "positive_prompt": "alleyway, John pulls a GUN. He CHASEs the shadow down the we, 35mm lens, natural field of view, wide angle, establishing shot, detailed background, tracking shot, smooth camera movement, cinematic night lighting, chiaroscuro, volumetric fog, dark atmosphere, shot on Kodak Vision3 500T, film grain, teal and orange color grading, 4k, ultra-realistic",
       "negative_prompt": "text, watermark, blur, distorted, cartoon, 3d render",
-      "seed": 313274248
+      "seed": 521625608
     },
     "SCENE-003-SHOT-002": {
       "positive_prompt": "alleyway, John pulls a GUN. He CHASEs the shadow down the we, 35mm lens, natural field of view, medium shot, balanced composition, tracking shot, smooth camera movement, cinematic night lighting, chiaroscuro, volumetric fog, dark atmosphere, shot on Kodak Vision3 500T, film grain, teal and orange color grading, 4k, ultra-realistic",
       "negative_prompt": "text, watermark, blur, distorted, cartoon, 3d render",
-      "seed": 382618780
+      "seed": 236471508
     }
   },
   "assets": {},
