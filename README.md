@@ -32,7 +32,7 @@ graph TD
     Factory --> Critic{Node 5: Semantic Critic}
     
     Critic -->|Pass| End([End])
-    Critic -->|Fail (Retry < 3)| Prompt
+    Critic -->|"Fail (Retry < 3)"| Prompt
     
     style Critic fill:#ff9999,stroke:#333,stroke-width:2px
     style Factory fill:#99ff99,stroke:#333,stroke-width:2px
@@ -47,7 +47,12 @@ graph TD
 | **Cinematic Engine** | Applies Film Grammar heuristics (e.g., "High Tension = 35mm Handheld"). | Heuristic Logic |
 | **Prompt Generator** | Injects consistent style vectors and camera tokens. | String Templating |
 | **Production Factory** | Modular adapter for Image (Flux) and Video (Runway/Kling). | Adapter Pattern |
-| **The Critic** | Semantic verification via BERT embeddings. Calculates cosine similarity to detect drift. | `sentence-transformers` |
+| **Visual Critic** | **(New)** Uses a VLM (Mock/GPT-4o) to "watch" the generated video, caption it, and semantically compare that caption against the original script. Validates **Reality**, not just Intent. | `VisionService` |
+
+## 🔬 "System 2" Engineering Features
+...
+### 4. Determinism Verification
+Identical script inputs produce bit-exact `ShotPlan` objects. This property is verified via SHA-256 checksums of the state object at the "Planning" checkpoint.
 
 ---
 
